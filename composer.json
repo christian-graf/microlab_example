@@ -1,11 +1,11 @@
 {
-    "name": "laravel/laravel",
+    "name": "christian-graf/microlab-example",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "Programming task: Website with integrated calendar to add reminders.",
+    "keywords": [],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
+        "php": "^8.3",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9"
     },
