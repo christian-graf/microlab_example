@@ -27,9 +27,14 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar');
-    //Route::post('/calendar/event', [ProfileController::class, 'addEvent'])->name('calendar.event.add');
-    //Route::patch('/calendar/event', [ProfileController::class, 'updateEvent'])->name('calendar.event.add');
-    //Route::delete('/calendar/event', [ProfileController::class, 'deleteEvent'])->name('calendar.event.add');
+    Route::post('/calendar/reminder', [CalendarController::class, 'addReminder'])->name('calendar.reminder.add');
+    Route::patch('/calendar/reminder/{id}', [CalendarController::class, 'updateReminder'])
+        ->where('id', '[0-9]+')
+        ->name('calendar.reminder.update');
+    Route::delete('/calendar/reminder/{id}', [CalendarController::class, 'deleteReminder'])
+        ->where('id', '[0-9]+')
+        ->name('calendar.reminder.delete')
+    ;
 });
 
 require __DIR__.'/auth.php';
